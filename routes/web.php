@@ -7,7 +7,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 
-Route::view('/', 'welcome');
+Route::view('/', 'layouts.index');
 Route::view('/employees', 'employees');
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 Route::get('/users', [UserController::class, 'index'])->middleware('auth');
@@ -39,5 +39,3 @@ Route::get('/api/dashboard/stats', [DashboardController::class, 'stats'])->middl
 Route::get('/api/dashboard/employees-by-department', [DashboardController::class, 'employeesByDepartment'])->middleware('auth');
 Route::get('/api/dashboard/recent-employees', [DashboardController::class, 'recentEmployees'])->middleware('auth');
 Route::get('/api/dashboard/recent-users', [DashboardController::class, 'recentUsers'])->middleware('auth');
-
-
