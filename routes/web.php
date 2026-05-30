@@ -7,7 +7,7 @@ use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 
-Route::view('/', 'welcome');
+Route::view('/', 'layouts.index');
 Route::view('/employees', 'employees');
 Route::get('/profile', [ProfileController::class, 'show'])->middleware('auth');
 Route::get('/users', [UserController::class, 'index'])->middleware('auth');
