@@ -189,8 +189,14 @@ async function loadEmployeesByDepartment() {
     const result = await response.json();
     
     if (result.success) {
+      if (result.labels.length === 0) {
+        document.getElementById('barChart').parentElement.innerHTML = '<p class="text-center text-muted py-4">No department data yet</p>';
+        document.getElementById('pieChart').parentElement.innerHTML = '<p class="text-center text-muted py-4">No department data yet</p>';
+        return;
+      }
+
       const colors = ['#2563eb', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444', '#06b6d4', '#64748b', '#ec4899'];
-      
+
       if (barChartInstance) barChartInstance.destroy();
       if (pieChartInstance) pieChartInstance.destroy();
       
