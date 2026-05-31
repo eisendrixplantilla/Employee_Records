@@ -11,7 +11,7 @@
       @csrf
       <div class="mb-3">
         <label class="form-label">Full Name</label>
-        <input type="text" name="name" class="form-control form-control-lg" placeholder="John Doe" required>
+        <input type="text" name="name" class="form-control form-control-lg" placeholder="Juan Dela Cruz" required>
         <div class="invalid-feedback">Name is required.</div>
       </div>
       <div class="mb-3">
